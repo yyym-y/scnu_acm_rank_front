@@ -41,7 +41,7 @@ export function personCompetitions(params) {
 export function groupCompetitions(params) {
     return request({
         method : 'GET',
-        url:'/groupCompetitions ',
+        url:'/groupCompetitions',
         params : params
     })
 }

@@ -14,7 +14,8 @@
             prop="score" label="积分" min-width="15%" align="center">
         </el-table-column>
     </el-table>
-    <detail_comp_dialogVue ref="detial" :title="'团队比赛详情'"></detail_comp_dialogVue>
+    <detail_comp_dialogVue ref="Gdetial" 
+        :title="'团队比赛详情'" :type="'group'"></detail_comp_dialogVue>
   </div>
 </template>
 
@@ -39,8 +40,8 @@ export default {
     },
     methods : {
         clickData(row, event, column) {
-            this.$refs.detial.openDialog()
-            console.log(row,  event,  column)
+            this.$refs.Gdetial.updateDialog(row.stu_id)
+            this.$refs.Gdetial.openDialog()
      }   
     }
 }
