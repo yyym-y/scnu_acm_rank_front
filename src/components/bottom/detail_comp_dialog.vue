@@ -51,7 +51,7 @@ export default {
                 stu_id : stu_id,
                 type : this.type
             }).then((res) => {
-                if(res == null) {return }
+                if(res == null) return
                 this.ifTeam = true;
                 this.teamName = res.name;
                 this.users = res.users;
@@ -64,6 +64,7 @@ export default {
             this.$api.index.personCompetitions(this, {
                 stu_id : stu_id
             }).then((res) => {
+                if(res == null) return
                 this.formDate = res;
             })
         },
@@ -71,6 +72,7 @@ export default {
             this.$api.index.groupCompetitions(this, {
                 stu_id : stu_id
             }).then((res) => {
+                if(res == null) return
                 this.formDate = res;
             })
         },

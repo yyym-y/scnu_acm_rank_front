@@ -4,7 +4,7 @@
           title="创建队伍" :visible.sync="dialogVisible" width="520px">
           <el-form label-position="left" label-width="84px" :model="form">
               <el-form-item label="队伍名称">
-                  <el-input v-model="form.name" type="password"></el-input>
+                  <el-input v-model="form.name"></el-input>
               </el-form-item>
               <el-form-item label="入队口令">
                   <el-input v-model="form.key"></el-input>
@@ -31,7 +31,13 @@
       methods: {
          openDis() {this.dialogVisible = true},
          submit() {
-
+            this.$api.user.createTeam(this, this.form).then((res)=> {
+                if(res == null) return
+                localStorage.setItem("group_id", res.group_id)
+                setTimeout(function() {
+                    location.reload();
+                },1000)
+            })
          }
       }
   }

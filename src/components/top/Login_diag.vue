@@ -32,6 +32,7 @@ export default {
        openDis() {this.dialogVisible = true},
        submit() {
             this.$api.user.Login(this, this.form).then((res) => {
+                if(res == null) return
                 localStorage.setItem("token", res.token)
                 localStorage.setItem("level", res.user.level)
                 localStorage.setItem("name", res.user.name)

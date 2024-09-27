@@ -31,7 +31,14 @@
       methods: {
          openDis() {this.dialogVisible = true},
          submit() {
-
+            this.$api.user.joinTeam(this, this.form).then((res)=> {
+                if(res == null) return;
+                console.log(res)
+                localStorage.setItem("group_id", res.group_id)
+                setTimeout(function() {
+                    location.reload();
+                },1000)
+            })
          }
       }
   }

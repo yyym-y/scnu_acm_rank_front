@@ -32,6 +32,7 @@ export default {
     },
     created() {
         this.$api.index.G_Competitions(this).then((res) => {
+            if(res == null) return
             res.rank.sort(function(a, b) {
                 return a.rank - b.rank;
             })

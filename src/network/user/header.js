@@ -1,7 +1,8 @@
 import request from '../request';
 
 export default {
-Login
+    Login, register, sendEmail,
+    createTeam, joinTeam
 }
 
 export function Login(data) {
@@ -11,6 +12,52 @@ export function Login(data) {
         data: data,
         headers: {
             'Content-Type': 'multipart/form-data'
+        }
+    })
+}
+
+export function register(data) {
+    return request({
+        method : 'POST',
+        url:'/register',
+        data: data,
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    })
+}
+
+export function sendEmail(data) {
+    return request({
+        method : 'POST',
+        url:'/sendEmail',
+        data: data,
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    })
+}
+
+export function createTeam(data) {
+    return request({
+        method : 'POST',
+        url:'/user/createTeam',
+        data: data,
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            'Authorization' : localStorage.getItem("token")
+        }
+    })
+}
+
+export function joinTeam(data) {
+    return request({
+        method : 'POST',
+        url:'/user/joinTeam',
+        data: data,
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            'Authorization' : localStorage.getItem("token")
         }
     })
 }

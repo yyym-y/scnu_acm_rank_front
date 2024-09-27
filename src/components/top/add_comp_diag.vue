@@ -49,7 +49,10 @@
       methods: {
          openDis() {this.dialogVisible = true},
          submit() {
-
+            this.$api.root.createCompetition(this, this.form).then((res) => {
+                if(res == null) return
+                console.log(res);
+            })
          }
       }
   }
