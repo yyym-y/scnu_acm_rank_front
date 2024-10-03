@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-dialog :title="title"
-        :visible.sync="dialogVisible" width="600px" >
+        :visible.sync="dialogVisible" width="600px">
         <span class="Dialog-title">
             <div v-if="ifTeam">
                 <strong>队伍名 : </strong> {{ teamName }}  ; 
@@ -10,18 +10,23 @@
             </div>
             <div v-else>暂时没有队伍信息</div>
         </span>
-        <el-table :data="formDate" border style="width: 100%; margin-top: 20px;">
-            <el-table-column
-                prop="name" :label="SType" min-width="20%" align="center" show-overflow-tooltip></el-table-column>
-            <el-table-column
-                prop="comp_name" label="比赛名称" min-width="50%" align="center" show-overflow-tooltip></el-table-column>
-            <el-table-column
-                prop="rank" label="排名" min-width="10%" align="center"></el-table-column>
-            <el-table-column
-                prop="solve" label="做题数" min-width="15%" align="center"></el-table-column>
-            <el-table-column
-                prop="penalty" label="罚时" min-width="15%" align="center"></el-table-column>
-        </el-table>
+        <div style="height:400px;">
+            <el-scrollbar style="height:100%" wrap-style="overflow-x:hidden;">
+                <el-table :data="formDate" border style="width: 100%; margin-top: 20px;">
+                    <el-table-column
+                        prop="name" :label="SType" min-width="20%" align="center" show-overflow-tooltip></el-table-column>
+                    <el-table-column
+                        prop="comp_name" label="比赛名称" min-width="50%" align="center" show-overflow-tooltip></el-table-column>
+                    <el-table-column
+                        prop="rank" label="排名" min-width="10%" align="center"></el-table-column>
+                    <el-table-column
+                        prop="solve" label="做题数" min-width="15%" align="center"></el-table-column>
+                    <el-table-column
+                        prop="penalty" label="罚时" min-width="15%" align="center"></el-table-column>
+                </el-table>
+            </el-scrollbar>            
+        </div>
+
     </el-dialog>
   </div>
 </template>
@@ -87,5 +92,8 @@ export default {
 <style>
 .Dialog-title {
     font-size: medium;
+}
+.el-scrollbar__wrap{
+  overflow-x: hidden;
 }
 </style>
