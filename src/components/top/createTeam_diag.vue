@@ -2,9 +2,12 @@
     <div>
       <el-dialog
           title="创建队伍" :visible.sync="dialogVisible" width="520px">
-          <el-form label-position="left" label-width="84px" :model="form">
+          <el-form label-position="left" label-width="96px" :model="form">
               <el-form-item label="队伍名称">
                   <el-input v-model="form.name"></el-input>
+              </el-form-item>
+              <el-form-item label="队伍牛客名称">
+                  <el-input v-model="form.nc_team_name"></el-input>
               </el-form-item>
               <el-form-item label="入队口令">
                   <el-input v-model="form.key"></el-input>
@@ -24,7 +27,8 @@
               dialogVisible : false,
               form : {
                   name : "",
-                  key : ""
+                  key : "",
+                  nc_team_name : ""
               }
           }
       },
