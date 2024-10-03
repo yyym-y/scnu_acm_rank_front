@@ -2,7 +2,7 @@ import request from '../request';
 
 export default {
     Login, register, sendEmail,
-    createTeam, joinTeam
+    createTeam, joinTeam, editTeam, totalTeamDetail
 }
 
 export function Login(data) {
@@ -55,6 +55,29 @@ export function joinTeam(data) {
         method : 'POST',
         url:'/user/joinTeam',
         data: data,
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            'Authorization' : localStorage.getItem("token")
+        }
+    })
+}
+
+export function editTeam(data) {
+    return request({
+        method : 'POST',
+        url:'/user/editTeam',
+        data: data,
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            'Authorization' : localStorage.getItem("token")
+        }
+    })
+}
+
+export function totalTeamDetail() {
+    return request({
+        method : 'POST',
+        url:'/user/totalTeamDetail',
         headers: {
             'Content-Type': 'multipart/form-data',
             'Authorization' : localStorage.getItem("token")

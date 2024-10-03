@@ -2,7 +2,7 @@ import header from "./header";
 
 export default {
     Login, register, sendEmail,
-    createTeam, joinTeam
+    createTeam, joinTeam, editTeam, totalTeamDetail
 }
 
 export function Login( self, data ) {
@@ -64,6 +64,32 @@ export function joinTeam( self, data ) {
             self.$message.error("队伍加入失败 :("); return null
         }
         self.$message.success("队伍加入成功 :)")
+        return res.data
+    }).catch((err) => {
+        self.$message.error("服务器异常 " + err);
+    });
+}
+
+
+export function editTeam( self, data ) {
+    return header.editTeam(data).then((res) => {
+        res = res.data
+        console.log(res)
+        if(res.status == 1) {
+            self.$message.error(res.msg + " :("); return null
+        }
+        self.$message.success("队伍信息修改成功 :)")
+    }).catch((err) => {
+        self.$message.error("服务器异常 " + err);
+    });
+}
+
+export function totalTeamDetail( self ) {
+    return header.totalTeamDetail().then((res) => {
+        res = res.data
+        if(res.status == 1) {
+            self.$message.error("为查询到相关队伍信息 :("); return null
+        }
         return res.data
     }).catch((err) => {
         self.$message.error("服务器异常 " + err);

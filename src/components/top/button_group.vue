@@ -6,7 +6,7 @@
             <el-button type="danger" @click="logout">退出</el-button>
         </div>
         <div v-if="ifHaveTeam && ifRoot == false">
-            <el-button type="info" plain>管理队伍</el-button>
+            <el-button type="info" @click="openEditTeam" plain>管理队伍</el-button>
             <el-button type="danger" @click="logout">退出</el-button>
         </div>
         <div v-else-if="ifHaveTeam == false && ifRoot == false">
@@ -24,6 +24,7 @@
     <joinTeam_daig ref="jjoinTeam"></joinTeam_daig>
     <createTeam_diag ref="ccreateTeam"></createTeam_diag>
     <add_comp_diag ref="addComp"></add_comp_diag>
+    <editTeam_diag ref="eeditTeam"></editTeam_diag>
   </div>
 </template>
 
@@ -33,10 +34,11 @@ import register_diagVue from './register_diag.vue'
 import joinTeam_daig from './joinTeam_diag.vue';
 import createTeam_diag from './createTeam_diag.vue';
 import add_comp_diag from './add_comp_diag.vue';
+import editTeam_diag from './editTeam_diag.vue';
 export default {
     components : {
         Login_diagVue, register_diagVue,
-        joinTeam_daig, createTeam_diag,
+        joinTeam_daig, createTeam_diag, editTeam_diag,
         add_comp_diag
     },
     data() {
@@ -52,6 +54,7 @@ export default {
         openJoinTeam() {this.$refs.jjoinTeam.openDis()},
         openCreateTeam() {this.$refs.ccreateTeam.openDis()},
         openAddComp() {this.$refs.addComp.openDis()},
+        openEditTeam() {this.$refs.eeditTeam.openDis()},
         logout() {
             localStorage.clear();
             this.$message.success("退出成功 :)");
