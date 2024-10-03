@@ -39,11 +39,7 @@ export default {
     methods : {
         openDis() {this.dialogVisible = true},
         submit() {
-            this.$api.user.editTeam(this, this.form).then((res) => {
-                setTimeout(function() {
-                    location.reload();
-                }, 1000)
-            })
+            this.$api.user.editTeam(this, this.form)
         }
     },
     beforeCreate() {

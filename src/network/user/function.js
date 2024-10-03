@@ -76,9 +76,12 @@ export function editTeam( self, data ) {
         res = res.data
         console.log(res)
         if(res.status == 1) {
-            self.$message.error(res.msg + " :("); return null
+            self.$message.error((res.msg == "" ? "修改失败[请检查内容]" : res.msg) + " :("); return null
         }
         self.$message.success("队伍信息修改成功 :)")
+        setTimeout(function() {
+            location.reload();
+        }, 1000)
     }).catch((err) => {
         self.$message.error("服务器异常 " + err);
     });
