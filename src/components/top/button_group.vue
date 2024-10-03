@@ -4,27 +4,27 @@
         <div v-if="ifRoot">
             <el-button @click="openAddComp">添加比赛</el-button>
             <el-button type="danger" @click="logout">退出</el-button>
+            <add_comp_diag ref="addComp"></add_comp_diag>
         </div>
         <div v-if="ifHaveTeam && ifRoot == false">
             <el-button type="info" @click="openEditTeam" plain>管理队伍</el-button>
             <el-button type="danger" @click="logout">退出</el-button>
+            <editTeam_diag ref="eeditTeam"></editTeam_diag>
         </div>
         <div v-else-if="ifHaveTeam == false && ifRoot == false">
             <el-button type="success" plain @click="openCreateTeam">创建队伍</el-button>
             <el-button type="info" plain @click="openJoinTeam">加入队伍</el-button>
             <el-button type="danger" @click="logout">退出</el-button>
+            <joinTeam_daig ref="jjoinTeam"></joinTeam_daig>
+            <createTeam_diag ref="ccreateTeam"></createTeam_diag>            
         </div>
     </div>
     <div v-else>
         <el-button type="primary" @click="openLogin">登录</el-button>
         <el-button type="success" @click="openResgister">注册</el-button>
+        <Login_diagVue ref="llogin"></Login_diagVue>
+        <register_diagVue ref="rresgister"></register_diagVue>        
     </div>
-    <Login_diagVue ref="llogin"></Login_diagVue>
-    <register_diagVue ref="rresgister"></register_diagVue>
-    <joinTeam_daig ref="jjoinTeam"></joinTeam_daig>
-    <createTeam_diag ref="ccreateTeam"></createTeam_diag>
-    <add_comp_diag ref="addComp"></add_comp_diag>
-    <editTeam_diag ref="eeditTeam"></editTeam_diag>
   </div>
 </template>
 
