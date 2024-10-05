@@ -84,7 +84,7 @@
             }, 1000)
          },
          sendEmail() {
-            this.setButtomClick(5)
+            this.setButtomClick(60)
             const formData = new FormData();
             formData.append('email', this.form.email);
             formData.append('stu_id', this.form.stu_id);
