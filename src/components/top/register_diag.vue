@@ -70,7 +70,11 @@
       methods: {
          openDis() {this.dialogVisible = true},
          submit() {
-            this.$api.user.register(this, this.form).then((res) => {})
+            this.$api.user.register(this, this.form).then((res) => {
+                setTimeout(function(){
+                    location.reload();
+                }, 1000)
+            })
          },
          setButtomClick(tt) {
             this.unclickable = true

@@ -13,7 +13,7 @@
                   <el-input v-model="form.key"></el-input>
               </el-form-item>
               <el-form-item>
-                  <el-button type="primary" @click="submit">加入</el-button>
+                  <el-button type="primary" @click="submit">创建</el-button>
               </el-form-item>
           </el-form>
       </el-dialog>
