@@ -1,22 +1,22 @@
 <template>
-  <div class="top-bar">
+  <div class="top-main-layout">
     <logo></logo>
-    <button_group></button_group>
+    <bottons></bottons>
   </div>
 </template>
 
 <script>
-import logo from './logo.vue';
-import button_group from './button_group.vue';
+import logo from '@/components/util/logo.vue';
+import bottons from '@/components/Buttons/user_operate_bottons.vue';
 export default {
   components : {
-    logo, button_group
+    logo, bottons
   }
 }
 </script>
 
 <style>
-.top-bar {
+.top-main-layout {
     width: 100%;
     height: 100%;
     display: flex;

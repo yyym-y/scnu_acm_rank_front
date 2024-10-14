@@ -41,11 +41,6 @@ export default {
 .el-notification {
     width: 380px !important;
 }
-/* 
-            如有任何的BUG或者使用问题,请联系管理员</br>
-            wx: 15919308028 </br>
-            email : yyym-y@outlook.com </br>
-*/
 
 #no-notify {
     color: blueviolet;

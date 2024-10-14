@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import MainTableView from '@/views/MainTableView.vue'
+import MainView from '@/views/MainView.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', name: 'home', component: MainTableView }
+  { path: '/', name: 'home', component: MainView }
 ]
 
 const router = new VueRouter({
